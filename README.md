@@ -1,6 +1,8 @@
-# `dotfiles`
+# `.dotfiles`
 
 A collection of dotfiles and zsh config - mostly for Mac. Themed with bright colors and high contrasts for us sunny boys ☀️
+
+![screenshot](assets/screenshot.png)
 
 ## Background
 
@@ -28,7 +30,7 @@ Backup your existing configuration. The following steps assume a bare environmen
    - Go to the _Colors_ tab and import the color preset `snazzy_mod.itermcolors`. It is using bright colors and is largely based on [`iterm2-snazzy`](https://github.com/sindresorhus/iterm2-snazzy).
    - Go to the _Keys_ tab and select _Natural Text Editing_ under the _Presets..._ dropdown. This improves `zsh-autosuggestions` a lot as you can navigate through the suggestions and segments by (`⌥` +) arrow keys.
    - Go to the _Text_ tab and select the _FiraCode_ font. Enable ligatures.
-1. _Optional_: Update `zsh/nogit.example.zsh` to your needs.
+1. _Optional_: Update `zsh/nogit.example.zsh` to your needs. Delete `/assets`.
 1. Source the zsh configuration by running `source ~/.zshrc`, or `reload` in case the aliases have been sourced already.
 
 ## Updates
