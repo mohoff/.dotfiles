@@ -1,0 +1,8 @@
+.DS_Store
+
+zsh/oh-my-zsh
+zsh/zsh-autosuggestions
+zsh/zsh-syntax-highlighting
+zsh/nogit.zsh
+
+notes.md
