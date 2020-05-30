@@ -59,5 +59,5 @@ source $DOTFILES/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $DOTFILES/zsh/completions.zsh
 
 if [ -f $DOTFILES/zsh/nogit.zsh ]; then
-   source $DOTFILES/zsh/nogit.zsh
+  source $DOTFILES/zsh/nogit.zsh
 fi

@@ -31,7 +31,7 @@ Backup your existing configuration. The following steps assume a bare environmen
 1. Run `init.sh`. It will install:
     - [`oh-my-zsh`](https://github.com/ohmyzsh/ohmyzsh) framework
     - [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions) and [`zsh-syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting) plugins
-1. Create an iTerm2 profile (_Preferences > Profile_) and set is as default.
+1. Create an iTerm2 profile (_Preferences > Profile_) and set it as default.
    - Go to the _Colors_ tab and import the color preset `theming/snazzy_mod.itermcolors`.
    - Go to the _Keys_ tab and select _Natural Text Editing_ under the _Presets..._ dropdown. This improves `zsh-autosuggestions` a lot as you can navigate through the suggestions and segments by (`⌥` +) arrow keys.
    - Go to the _Text_ tab and select the _FiraCode_ font. Enable ligatures.
@@ -45,7 +45,6 @@ Backup your existing configuration. The following steps assume a bare environmen
 
 ## TODO
 
-- add vscode config
 - add fuzzyfinder
 - gitattributes/git configs
 - build prompt and completions for `punch`
@@ -54,3 +53,4 @@ Backup your existing configuration. The following steps assume a bare environmen
 - improve git dirty color - signal that files can be staged
 - better define tool requirements: istioctl, kubectl, exa, bat, ...
 - CI (Github actions) for dotfiles?
+- set hostname: `sudo scutil --set HostName name-you-want`

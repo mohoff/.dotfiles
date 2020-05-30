@@ -1,0 +1,126 @@
+{
+  // VSC default settings
+  "breadcrumbs.enabled": true,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.renderWhitespace": "boundary",
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 100000,
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.tslint": true
+  },
+  "editor.fontSize": 12,
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "Fira Code",
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.maxColumn": 100,
+  "editor.emptySelectionClipboard": false,
+  "explorer.openEditors.visible": 0,
+  "editor.suggestSelection": "first",
+  "explorer.confirmDelete": false,
+  "extensions.ignoreRecommendations": true,
+  "files.autoSave": "afterDelay",
+  "files.exclude": {
+    "**/.git": false,
+    "**/.hg": false,
+    "**/.svn": false,
+    "**/CVS": false,
+    "**/.DS_Store": true,
+    "**/.vscode": true
+  },
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "search.exclude": {
+    "**/.git": true,
+    "**/.vscode": true,
+    "**/.DS_Store": true
+  },
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "window.zoomLevel": -1,
+  "workbench.editor.closeOnFileDelete": true,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.settings.useSplitJSON": true,
+
+  // Rainbow
+
+  "indentRainbow.colors": [
+    "rgba(20,20,20,0.3)",
+    "rgba(50,50,50,0.3)"
+  ],
+  "indentRainbow.errorColor": "rgba(128,32,32,0)",
+
+  // Meterial Icon Theme
+
+  "material-icon-theme.activeIconPack": "react",
+  "material-icon-theme.showWelcomeMessage": false,
+
+  // Git,Gitlense
+
+  "git.enableCommitSigning": true,
+  "gitlens.blame.avatars": false,
+  "gitlens.blame.compact": false,
+  "gitlens.blame.format": "${author|14?} ${agoOrDate|14-}",
+  "gitlens.blame.heatmap.location": "left",
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.hovers.enabled": false,
+  "gitlens.strings.codeLens.unsavedChanges.recentChangeAndAuthors": "Unsaved changes (cannot determine recent change or authors)${authorAgoOrDate} • ${message}",
+
+  // Terminal
+
+  "terminal.integrated.env.osx": {
+    "SHELL": "/bin/zsh"
+  },
+  "terminal.external.osxExec": "iterm.app",
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  // Set same colors as in `/theming/snazzy_mod.itermcolors`. Leaving background,foreground,cursor colors untouched
+  "workbench.colorCustomizations": {
+    "terminal.ansiBlack":"#2b2d30",
+    "terminal.ansiBlue":"#57c7fe",
+    "terminal.ansiBrightBlack":"#686767",
+    "terminal.ansiBrightBlue":"#57c7fe",
+    "terminal.ansiBrightCyan":"#9aecfe",
+    "terminal.ansiBrightGreen":"#5af78d",
+    "terminal.ansiBrightMagenta":"#57c7fe",
+    "terminal.ansiBrightRed":"#ff5b56",
+    "terminal.ansiBrightWhite":"#f1f1f0",
+    "terminal.ansiBrightYellow":"#f3f99c",
+    "terminal.ansiCyan":"#9aecfe",
+    "terminal.ansiGreen":"#5af78d",
+    "terminal.ansiMagenta":"#57c7fe",
+    "terminal.ansiRed":"#ff5b56",
+    "terminal.ansiWhite":"#f1f1f0",
+    "terminal.ansiYellow":"#f3f99c"
+  },
+
+  // Language specific settings
+
+  "[rust]": {
+    "editor.tabSize": 4
+  },
+  "tslint.configFile": "./tslint.json",
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "yaml.completion": true,
+  "yaml.format.singleQuote": true,
+  "yaml.format.bracketSpacing": true,
+  "yaml.validate": true,
+  "[yaml]": {
+    "editor.insertSpaces": true,
+    "editor.autoIndent": "full"
+  },
+  "rust.clippy_preference": "on",
+  "hindent-format.enable": true,
+  "hindent-format.command": "/Users/mo/.local/bin/hindent",
+  "[haskell]": {
+    "editor.defaultFormatter": "monofon.hindent-format"
+  },
+}
