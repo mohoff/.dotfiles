@@ -44,3 +44,4 @@ Backup your existing configuration. The following steps assume a bare environmen
 - build prompt and completions for `punch`
 - more init.sh stuff: `brew install...`.
 - fix differently rendered colors in vscode terminal
+- fix git dirty color - always (sometimes?) stays green where it should be yellow/red

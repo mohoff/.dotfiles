@@ -26,7 +26,14 @@ DISABLE_MAGIC_FUNCTIONS=true # disabled to improve paste speed
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
+case $TERM in
+  xterm*)
+    # set icon name and window title to current directory
+    # `%~`: http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Simple-Prompt-Escapes
+    precmd () {print -Pn "\e]0;%~\a"}
+    ;;
+esac
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
