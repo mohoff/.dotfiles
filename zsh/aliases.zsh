@@ -116,6 +116,6 @@ alias -s {ape,avi,flv,m4a,mkv,mov,mp3,mp4,mpeg,mpg,ogg,ogm,wav,webm}=vlc
 # Clone git repos by pasting git url
 alias -s git="git clone"
 # Code, syntax-highlight
-alias -s {hs,rs,sol,js,ts,md,html,css,json,yaml,yml,toml,sh,zsh,zsh-theme}=code
+alias -s {hs,rs,sol,js,ts,md,html,css,json,yaml,yml,toml,zsh,zsh-theme}=code
 # Quick note, no highlighting
 alias -s {txt,dump}=mate

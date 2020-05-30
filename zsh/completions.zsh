@@ -9,5 +9,7 @@ compdef kaz='k'
 compdef kfp='k'
 
 # istio
-source $(which istioctl)/../../tools/_istioctl
-compdef i='istioctl'
+if type "istioctl" > /dev/null; then
+  source $(which istioctl)/../../tools/_istioctl;
+  compdef i='istioctl';
+fi

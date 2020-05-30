@@ -47,3 +47,4 @@ Backup your existing configuration. The following steps assume a bare environmen
 - more init.sh stuff: `brew install...`.
 - fix differently rendered colors in vscode terminal
 - fix git dirty color - always (sometimes?) stays green where it should be yellow/red
+- better define tool requirements: istioctl, kubectl, exa, bat, ...
