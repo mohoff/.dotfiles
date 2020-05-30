@@ -1,5 +1,5 @@
 # path
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/bin:$HOME/.cargo/bin:$PATH
 export fpath=($DOTFILES/zsh/functions $DOTFILES/zsh/completions $fpath)
 
 # oh-my-zsh

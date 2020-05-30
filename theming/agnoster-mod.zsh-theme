@@ -173,12 +173,26 @@ prompt_aws() {
   esac
 }
 
+prompt_punch() {
+  if type "punch" > /dev/null; then
+    case $(punch status) in
+      PunchedIn)
+        prompt_segment black black "👊"
+        ;;
+      Corrupted)
+        prompt_segment red black "👊"
+        ;;
+    esac
+  fi
+}
+
 ## Main prompt
 build_prompt() {
   RETVAL=$?
   prompt_status
   prompt_aws
   prompt_context
+  prompt_punch
   prompt_dir
   prompt_git
   prompt_end

@@ -47,7 +47,6 @@ Backup your existing configuration. The following steps assume a bare environmen
 
 - add fuzzyfinder
 - gitattributes/git configs
-- build prompt and completions for `punch`
 - more init.sh stuff: `brew install...`.
 - fix differently rendered colors in vscode terminal
 - improve git dirty color - signal that files can be staged
