@@ -19,15 +19,20 @@ Thanks to all the makers for their open source work that I was allowed to build 
 
 Backup your existing configuration. The following steps assume a bare environment. Use at your own risk!
 
-1. Install iTerm2 as terminal on MacOS.
-1. Install zsh and [`oh-my-zsh`](https://github.com/ohmyzsh/ohmyzsh).
-1. Make zsh the default shell by running `chsh -s $(which zsh)`.
-1. Clone this repo into the home directory and rename it to be hidden (`.dotfiles/`)
-1. Move or symlink `.zshrc` and `.editorconfig` into your home directory.
-1. Run `init.sh`. It will install the plugins [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions) and [`zsh-syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting)
-1. Download and install the _[FireCode](https://github.com/tonsky/FiraCode/wiki/Installing)_ font.
-1. Create a iTerm2 profile (_Preferences > Profile_) and set is as default.
-   - Go to the _Colors_ tab and import the color preset `snazzy_mod.itermcolors`. It is using bright colors and is largely based on [`iterm2-snazzy`](https://github.com/sindresorhus/iterm2-snazzy).
+*Preparation*:
+- Install iTerm2 as terminal on MacOS.
+- Install zsh and [`oh-my-zsh`](https://github.com/ohmyzsh/ohmyzsh).
+- Download and install the _[FireCode](https://github.com/tonsky/FiraCode/wiki/Installing)_ font.
+- Make zsh the default shell by running `chsh -s $(which zsh)`.
+
+*Setup*:
+1. Clone this repo into your home directory so that there is `~/.dotfiles`.
+1. Move up or symlink `.zshrc` and `.editorconfig` to have both in the home directory.
+1. Run `init.sh`. It will install:
+    - [`oh-my-zsh`](https://github.com/ohmyzsh/ohmyzsh) framework
+    - [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions) and [`zsh-syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting) plugins
+1. Create an iTerm2 profile (_Preferences > Profile_) and set is as default.
+   - Go to the _Colors_ tab and import the color preset `theming/snazzy_mod.itermcolors`.
    - Go to the _Keys_ tab and select _Natural Text Editing_ under the _Presets..._ dropdown. This improves `zsh-autosuggestions` a lot as you can navigate through the suggestions and segments by (`⌥` +) arrow keys.
    - Go to the _Text_ tab and select the _FiraCode_ font. Enable ligatures.
 1. _Optional_: Update `zsh/nogit.example.zsh` to your needs. Delete `/assets`.
@@ -48,3 +53,4 @@ Backup your existing configuration. The following steps assume a bare environmen
 - fix differently rendered colors in vscode terminal
 - improve git dirty color - signal that files can be staged
 - better define tool requirements: istioctl, kubectl, exa, bat, ...
+- CI (Github actions) for dotfiles?
