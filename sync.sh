@@ -4,11 +4,20 @@
 export DOTFILES=$HOME/.dotfiles
 export HOSTNAME=nomad
 
+# Maks zsh the default shell
+chsh -s $(which zsh)
+
 # TODO: many more brew installs. Put them in install.sh? So init.sh is more a sync.sh.
 
 # hostname
 echo "Setting hostname to '$HOSTNAME'..."
 sudo scutil --set HostName $HOSTNAME
+
+# upgrading brew formulae and casks
+echo "Updating and upgrading brew formulae..."
+brew update && brew upgrade
+echo "Upgrading outdated brew casks..."
+brew cask outdated | xargs brew cask upgrade
 
 # ohmyzsh and plugins
 DIR_OHMYZSH="zsh/oh-my-zsh"
@@ -32,7 +41,16 @@ ln -s vscode/settings.json $HOME/Library/"Application Support"/Code/User/setting
 echo "Symlinking ssh config..."
 ln -s ssh/config $HOME/.ssh/config
 
+# editorconfig
+echo "Symlinking .editorconfig..."
+ln -s .editorconfig $HOME/.editorconfig
+
 # git
+echo "Symlinking .gitconfig..."
+ln -s .gitconfig $HOME/.gitconfig
 echo "Updating global git config includeIf..."
 git config --global "includeif.gitdir:~/dev/.path" "$DOTFILES/git/dev.gitconfig"
 git config --global "includeif.gitdir:~/dev/fpcomplete/.path" "$DOTFILES/git/fpco.gitconfig"
+
+# haskell tooling
+stack upgrade
