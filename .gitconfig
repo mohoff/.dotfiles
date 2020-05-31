@@ -8,6 +8,7 @@
 [core]
   editor = vim
   excludesfile = /Users/mo/.dotfiles/git/global.gitignore
+  attributesfile = /Users/mo/.dotfiles/git/global.gitattributes
   pager = diff-so-fancy | less --tabs=4 -RFX
   #pager = delta --dark
 

@@ -51,6 +51,7 @@ ln -s .gitconfig $HOME/.gitconfig
 echo "Updating global git config..."
 git config --global "core.editor" "$EDITOR"
 git config --global "core.excludesfile" "$DOTFILES/git/global.gitignore"
+git config --global "core.attributesfile" "$DOTFILES/git/global.gitattributes"
 git config --global "includeif.gitdir:~/dev/.path" "$DOTFILES/git/dev.gitconfig"
 git config --global "includeif.gitdir:~/dev/fpcomplete/.path" "$DOTFILES/git/fpco.gitconfig"
 
