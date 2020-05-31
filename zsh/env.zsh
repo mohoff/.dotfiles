@@ -1,5 +1,8 @@
 # path
-export PATH=$HOME/bin:$HOME/.cargo/bin:$PATH
+export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$(brew --prefix git)/share/git-core/contrib/diff-highlight:$PATH
+
 export fpath=($DOTFILES/zsh/functions $DOTFILES/zsh/completions $fpath)
 
 # oh-my-zsh
