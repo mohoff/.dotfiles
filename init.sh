@@ -2,8 +2,13 @@
 
 # Update if dotfiles directory is different. Also update $DOTFILES in .zshrc to the same value
 export DOTFILES=$HOME/.dotfiles
+export HOSTNAME=nomad
 
 # TODO: many more brew installs. Put them in install.sh? So init.sh is more a sync.sh.
+
+# hostname
+echo "Setting hostname to '$HOSTNAME'..."
+sudo scutil --set HostName $HOSTNAME
 
 # ohmyzsh and plugins
 DIR_OHMYZSH="zsh/oh-my-zsh"

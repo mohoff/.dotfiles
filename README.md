@@ -51,5 +51,4 @@ Backup your existing configuration. The following steps assume a bare environmen
 - improve git dirty color - signal that files can be staged
 - better define tool requirements: istioctl, kubectl, exa, bat, ...
 - CI (Github actions) for dotfiles?
-- set hostname: `sudo scutil --set HostName name-you-want`
 - Switch to https://github.com/dandavison/delta when https://github.com/dandavison/delta/issues/177#issuecomment-635711834 is released
