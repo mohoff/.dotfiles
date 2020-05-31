@@ -1,21 +1,25 @@
 # Show effective git config in a repo: git config --list --show-origin
 
+# Some parts are overwritten by sync.sh because we want to use $DOTFILES instead of hard-coding paths. Git config does not support expansion
+
 [user]
-	name = Moritz Hoffmann
+  name = Moritz Hoffmann
 
 [core]
-   pager = diff-so-fancy | less --tabs=4 -RFX
-   #pager = delta --dark
+  editor = vim
+  excludesfile = /Users/mo/.dotfiles/git/global.gitignore
+  pager = diff-so-fancy | less --tabs=4 -RFX
+  #pager = delta --dark
 
 [interactive]
   diffFilter = delta
 [color]
-   ui = true
+  ui = true
 [color "diff-highlight"]
-   oldNormal = red bold
-   oldHighlight = red bold 52
-   newNormal = green bold
-   newHighlight = green bold 22
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
 [color "diff"]
   meta = 11
   frag = magenta bold
@@ -24,9 +28,8 @@
   new = green bold
   whitespace = red reverse
 
-# Overwritten by init.sh because we want to use $DOTFILES instead of hard-coding the directories. Git config does not support expansion
 # Order matters using this approach - last matching directive is used
 [includeIf "gitdir:~/dev/"]
-	path = /Users/mo/.dotfiles/git/dev.gitconfig
+  path = /Users/mo/.dotfiles/git/dev.gitconfig
 [includeIf "gitdir:~/dev/fpcomplete/"]
-	path = /Users/mo/.dotfiles/git/fpco.gitconfig
+  path = /Users/mo/.dotfiles/git/fpco.gitconfig

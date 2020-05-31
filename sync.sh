@@ -48,9 +48,12 @@ ln -s .editorconfig $HOME/.editorconfig
 # git
 echo "Symlinking .gitconfig..."
 ln -s .gitconfig $HOME/.gitconfig
-echo "Updating global git config includeIf..."
+echo "Updating global git config..."
+git config --global "core.editor" "$EDITOR"
+git config --global "core.excludesfile" "$DOTFILES/git/global.gitignore"
 git config --global "includeif.gitdir:~/dev/.path" "$DOTFILES/git/dev.gitconfig"
 git config --global "includeif.gitdir:~/dev/fpcomplete/.path" "$DOTFILES/git/fpco.gitconfig"
 
 # haskell tooling
+echo "Upgrading stack..."
 stack upgrade
