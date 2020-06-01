@@ -15,6 +15,7 @@ brew install azure-cli \
   jq \
   kubectl \
   node \
+  postgres \
   ripgrep \
   rkhunter \
   terraform \
