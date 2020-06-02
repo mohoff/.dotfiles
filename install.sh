@@ -10,7 +10,7 @@ brew install azure-cli \
   exa \
   git \
   diff-so-fancy \
-  gnupg \
+  gnupg2 \
   htop \
   jq \
   kubectl \

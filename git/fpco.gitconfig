@@ -1,2 +1,6 @@
 [user]
-  email = mhoffmann@fpcomplete.com
+  email = moritz@fpcomplete.com
+  signingKey = B35D45950E2E06EA
+
+[commit]
+  gpgsign = true
