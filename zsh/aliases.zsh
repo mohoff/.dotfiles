@@ -28,7 +28,7 @@ alias gcob="git checkout -b"
 alias gb="git branch -a"
 alias gbD="git branch | grep -v 'master' | xargs git branch -D"
 alias gcom="git checkout master"
-alias gpnew="git push --set-upstream origin (git rev-parse --abbrev-ref HEAD)"
+alias gpnew='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
 alias gpmr="ga . && gca && gpnf" # short cut to update open MR with new local changes in amended commit
 alias gclean="git clean -n -f -d"
 alias gauthors="git log --no-merges | grep Author | sort | uniq"
@@ -55,7 +55,7 @@ alias ct="cargo test"
 
 # haskell
 alias s="stack"
-alias sb="s build --fast --ghc-options=-freverse-errors"
+alias sb="s build --fast '--ghc-options=-freverse-errors -optP-Wno-nonportable-include-path'"
 alias sbp="sb --pedantic"
 alias si="s install"
 alias st="s test --fast"
@@ -72,8 +72,10 @@ alias i="istioctl"
 alias tf="terraform"
 
 # docker
-alias dka="docker kill (docker ps -q)"
-alias dra="docker rm (docker ps -q)"
+alias dka='docker ps -q | xargs -n 1 docker kill'
+alias drma="docker container prune --force"
+alias drmia="docker images -q | xargs -n 1 docker rmi"
+alias dspa="docker system prune --all --force"
 
 # kill
 alias node0="pkill -f node"

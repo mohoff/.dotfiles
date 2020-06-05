@@ -11,7 +11,7 @@ function sdex {
 
 # view csv data
 # based on https://github.com/paulirish/dotfiles/blob/453b3863346c5a419260b32b4c058e8d84920813/.functions#L97
-function viewcsv(){
+function viewcsv() {
   sed 's/,,/, ,/g;s/,,/, ,/g' "$@" | column -s, -t
 }
 

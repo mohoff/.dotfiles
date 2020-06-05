@@ -123,4 +123,5 @@
   "[haskell]": {
     "editor.defaultFormatter": "monofon.hindent-format"
   },
+  "tabnine.experimentalAutoImports": 0,
 }
