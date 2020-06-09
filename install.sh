@@ -3,6 +3,9 @@
 # WARNING: This script hasn't been tested much. Not having a new environment.
 # NOTE: To update the installed tools and sync settings, run /sync.sh.
 
+# install brew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
 # brew formulae
 brew install azure-cli \
   bat \
