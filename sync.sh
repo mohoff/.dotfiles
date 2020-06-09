@@ -13,6 +13,10 @@ chsh -s $(which zsh)
 echo "Setting hostname to '$HOSTNAME'..."
 sudo scutil --set HostName $HOSTNAME
 
+# zsh
+echo "Symlinking .zshrc..."
+ln -s .zshrc $HOME/.zshrc
+
 # upgrading brew formulae and casks
 echo "Updating and upgrading brew formulae..."
 brew update && brew upgrade
@@ -54,6 +58,17 @@ git config --global "core.excludesfile" "$DOTFILES/git/global.gitignore"
 git config --global "core.attributesfile" "$DOTFILES/git/global.gitattributes"
 git config --global "includeif.gitdir:~/dev/.path" "$DOTFILES/git/dev.gitconfig"
 git config --global "includeif.gitdir:~/dev/fpcomplete/.path" "$DOTFILES/git/fpco.gitconfig"
+
+# completions
+echo "Install completions..."
+# docker
+curl -L https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker > $DOTFILES/zsh/completions/_docker
+# kubectl
+kubectl completion zsh > $DOTFILES/zsh/completions/_kubectl
+# istioctl
+if type "istioctl" > /dev/null; then
+  cp $(which istioctl)/../../tools/_istioctl $DOTFILES/zsh/completions/_istioctl;
+fi
 
 # haskell tooling
 echo "Upgrading stack..."

@@ -72,10 +72,11 @@ alias i="istioctl"
 alias tf="terraform"
 
 # docker
-alias dka='docker ps -q | xargs -n 1 docker kill'
-alias drma="docker container prune --force"
-alias drmia="docker images -q | xargs -n 1 docker rmi"
-alias dspa="docker system prune --all --force"
+alias d="docker"
+alias dka='d ps -q | xargs -n 1 d kill'
+alias drma="d container prune --force"
+alias drmia="d images -q | xargs -n 1 d rmi"
+alias dspa="d system prune --all --force"
 
 # kill
 alias node0="pkill -f node"

@@ -56,7 +56,9 @@ source $DOTFILES/zsh/config.zsh
 source $DOTFILES/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $DOTFILES/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-source $DOTFILES/zsh/completions.zsh
+autoload -U compinit
+compinit
+source $DOTFILES/zsh/completions/alias-completions.zsh
 
 if [ -f $DOTFILES/zsh/nogit.zsh ]; then
   source $DOTFILES/zsh/nogit.zsh

@@ -4,7 +4,7 @@ eamodio.gitlens
 eriklynd.json-tools
 justusadam.language-haskell
 lunaryorn.hlint
-mauve.terraform
+hashicorp.terraform
 monofon.hindent-format
 ms-azuretools.vscode-docker
 oderwat.indent-rainbow
