@@ -57,10 +57,9 @@ alias ct="cargo test"
 alias s="stack"
 alias sb="s build --fast '--ghc-options=-freverse-errors -optP-Wno-nonportable-include-path'"
 alias sbp="sb --pedantic"
-alias si="s install"
-alias st="s test --fast"
-alias sbi="sb && si"
-alias sdev="sb --file-watch"
+alias si="sb --copy-bins"
+alias st="sb --test"
+alias sdev="si --file-watch"
 
 # kube
 alias k="kubectl"

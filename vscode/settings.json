@@ -1,6 +1,6 @@
 {
-  // VSC default settings
   "breadcrumbs.enabled": true,
+  "editor.autoIndent": "advanced",
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
   "editor.renderWhitespace": "boundary",
@@ -123,5 +123,7 @@
   "[haskell]": {
     "editor.defaultFormatter": "monofon.hindent-format"
   },
-  "tabnine.experimentalAutoImports": 0,
+  "tabnine.experimentalAutoImports": true,
+  "workbench.list.smoothScrolling": true,
+  "editor.smoothScrolling": true,
 }
