@@ -27,10 +27,10 @@ brew install azure-cli \
   zsh
 
 # brew casks
-brew tap caskroom/fonts
+brew tap homebrew/cask-fonts
 brew cask install adobe-acrobat-reader \
-  font-fira-code \
   firefox \
+  font-fira-code \
   google-chrome \
   iterm2 \
   microsoft-outlook \
@@ -44,7 +44,11 @@ brew cask install adobe-acrobat-reader \
 #TODO: install istioctl
 
 # rust tooling
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+if type "cargo" > /dev/null; then
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y;
+fi
 
 # haskell tooling
-curl -sSL https://get.haskellstack.org/ | sh
+if type "stack" > /dev/null; then
+  curl -sSL https://get.haskellstack.org/ | sh;
+fi
