@@ -53,12 +53,16 @@ brew cask install \
   visual-studio-code # for installing vscode extensions, run /sync.sh
   #vlc  -- cert issue
 
-#TODO: install istioctl
+# istio
+command -v "istioctl" \
+  || export ISTIO_VERSION=1.6.2
+  && curl -L https://istio.io/downloadIstio | ISTIO_VERSION=$ISTIO_VERSION sh - \
+  && mv istio-$ISTIO_VERSION /etc/ # Symlinking happens in sync.sh when $HOME is known
 
 # rust tooling
-command -v "cargo" || \
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+command -v "cargo" \
+  || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 # haskell tooling
-command -v "stack" || \
-  curl -sSL https://get.haskellstack.org/ | sh -s -- -y
+command -v "stack" \
+  || curl -sSL https://get.haskellstack.org/ | sh -s -- -y
