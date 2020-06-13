@@ -1,5 +1,7 @@
 # `.dotfiles`
 
+![](https://github.com/mohoff/.dotfiles/workflows/Continuous%20Integration/badge.svg)
+
 A collection of dotfiles and zsh config - mostly for Mac. Themed with bright colors and high contrasts for us sunny boys ☀️
 
 ![screenshot](assets/screenshot.png)
@@ -47,7 +49,6 @@ The dotfiles are maintained as _my_ dotfiles. If you want to use them, update th
 - add fuzzyfinder
 - gitattributes/git configs
 - improve git dirty color - signal that files can be staged
-- CI (Github actions) for dotfiles?
 - Switch to https://github.com/dandavison/delta when https://github.com/dandavison/delta/issues/177#issuecomment-635711834 is released
 - Make ssh+git config so that it shows gitlab/github handle instead of email
 - benchmark performance

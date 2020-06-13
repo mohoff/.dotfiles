@@ -1,4 +1,4 @@
-name: Test install.sh and sync.sh
+name: Continuous Integration
 on: [push]
 
 jobs:
