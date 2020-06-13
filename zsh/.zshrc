@@ -33,6 +33,8 @@ case $TERM in
     # `%~`: http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Simple-Prompt-Escapes
     precmd () {print -Pn "\e]0;%~\a"}
     ;;
+  *)
+    echo "Cannot set terminal title. Unknown \$TERM: $TERM"
 esac
 
 # Uncomment the following line to enable command auto-correction.

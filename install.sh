@@ -4,7 +4,9 @@
 
 set -euo pipefail
 
-# Purge pre-installed dependencies on GitHub Actions macOS runners
+source zsh/env.zsh
+
+# Only CI: Remove pre-installed dependencies on GitHub Actions macOS runners
 [[ $CI ]] && brew remove --force $(brew list)
 
 # install brew
@@ -50,14 +52,14 @@ brew cask install \
   notion \
   slack \
   textmate \
-  visual-studio-code # for installing vscode extensions, run /sync.sh
-  #vlc  -- cert issue
+  visual-studio-code \
+  vlc
 
 # istio
 command -v "istioctl" \
-  || export ISTIO_VERSION=1.6.2
-  && curl -L https://istio.io/downloadIstio | ISTIO_VERSION=$ISTIO_VERSION sh - \
-  && mv istio-$ISTIO_VERSION /etc/ # Symlinking happens in sync.sh when $HOME is known
+  || curl -L https://istio.io/downloadIstio | sh - \
+  && mkdir -p $ISTIO_DIR \
+  && mv istio-$ISTIO_VERSION/* $ISTIO_DIR
 
 # rust tooling
 command -v "cargo" \

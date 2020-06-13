@@ -1,13 +1,12 @@
 #!/usr/bin/env zsh
 
+# NOTE: Run this script after /install.sh was run
+
 # Update if dotfiles directory is different. Also update $DOTFILES in .zshrc to the same value
-export DOTFILES=$HOME/.dotfiles
-export HOSTNAME=nomad
+source zsh/env.zsh
 
 # Maks zsh the default shell
 chsh -s $(which zsh)
-
-# TODO: many more brew installs. Put them in install.sh? So init.sh is more a sync.sh.
 
 # hostname
 echo "Setting hostname to '$HOSTNAME'..."
@@ -15,7 +14,7 @@ sudo scutil --set HostName $HOSTNAME
 
 # zsh
 echo "Symlinking .zshrc..."
-ln -s .zshrc $HOME/.zshrc
+ln -s $DOTFILES/zsh/.zshrc $HOME/.zshrc
 
 # upgrading brew formulae and casks
 echo "Updating and upgrading brew formulae..."
@@ -39,19 +38,19 @@ git clone "https://github.com/zsh-users/zsh-autosuggestions.git" "$DIR_ZSH_AUTOS
 echo "Installing vscode extensions..."
 cat vscode/extensions.txt | xargs -L 1 code --install-extension
 echo "Symlinking vscode settings.json..."
-ln -s vscode/settings.json $HOME/Library/"Application Support"/Code/User/settings.json
+ln -s $DOTFILES/vscode/settings.json $HOME/Library/"Application Support"/Code/User/settings.json
 
 # ssh
 echo "Symlinking ssh config..."
-ln -s ssh/config $HOME/.ssh/config
+ln -s $DOTFILES/ssh/config $HOME/.ssh/config
 
 # editorconfig
 echo "Symlinking .editorconfig..."
-ln -s .editorconfig $HOME/.editorconfig
+ln -s $DOTFILES/.editorconfig $HOME/.editorconfig
 
 # git
 echo "Symlinking .gitconfig..."
-ln -s .gitconfig $HOME/.gitconfig
+ln -s $DOTFILES/.gitconfig $HOME/.gitconfig
 echo "Updating global git config..."
 git config --global "core.editor" "$EDITOR"
 git config --global "core.excludesfile" "$DOTFILES/git/global.gitignore"
@@ -59,16 +58,23 @@ git config --global "core.attributesfile" "$DOTFILES/git/global.gitattributes"
 git config --global "includeif.gitdir:~/dev/.path" "$DOTFILES/git/dev.gitconfig"
 git config --global "includeif.gitdir:~/dev/fpcomplete/.path" "$DOTFILES/git/fpco.gitconfig"
 
+# istioctl
+echo "Symlinking istioctl..."
+ln -s $ISTIO_DIR/bin/istioctl /usr/local/bin/istioctl
+
 # completions
+
 echo "Installing completions..."
 # docker
 curl -L https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker > $DOTFILES/zsh/completions/_docker
 # kubectl
 kubectl completion zsh > $DOTFILES/zsh/completions/_kubectl
 # istioctl
-command -v "istioctl" && \
-  cp $(which istioctl)/../../tools/_istioctl $DOTFILES/zsh/completions/_istioctl
+cp $ISTIO_DIR/tools/_istioctl $DOTFILES/zsh/completions/_istioctl
 
 # haskell tooling
 echo "Upgrading stack..."
 stack upgrade
+
+# source
+source $HOME/.zshrc

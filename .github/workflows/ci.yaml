@@ -2,7 +2,14 @@ name: Test install.sh and sync.sh
 on: [push]
 
 jobs:
-  install:
+  cancel-redundant-workflows:
+    name: Cancel redundant workflows
+    runs-on: ubuntu-latest
+    steps:
+      - uses: styfle/cancel-workflow-action@0.4.0
+        with:
+          access_token: ${{ github.token }}
+  install-and-sync:
     name: Run install.sh
     strategy:
       matrix:
@@ -14,11 +21,16 @@ jobs:
         ]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: styfle/cancel-workflow-action@0.4.0
-        with:
-          access_token: ${{ github.token }}
       - uses: actions/checkout@v2
+      - name: Symlinking working dir into home dir
+        run: ln -s $(pwd) ~/.dotfiles
       - name: Run install.sh
         run: ./install.sh
       - name: Run sync.sh
         run: ./sync.sh
+        shell: zsh {0}
+      - name: Source zsh
+        run: |
+          source ~/.zshrc
+          weather odessa
+        shell: zsh {0}
