@@ -1,22 +1,32 @@
 #!/usr/bin/env zsh
 
-# WARNING: This script hasn't been tested much. Not having a new environment.
-# NOTE: To update the installed tools and sync settings, run /sync.sh.
+# NOTE: After running this script, run /sync.sh
+
+set -euo pipefail
+
+# Purge pre-installed dependencies on GitHub Actions macOS runners
+[[ $CI ]] && brew remove --force $(brew list)
 
 # install brew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+command -v "brew" || \
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # brew formulae
-brew install azure-cli \
+brew install \
+  azure-cli \
+  awscli \
   bat \
   curl \
   exa \
   git \
+  git-delta \
   diff-so-fancy \
-  gnupg2 \
+  gnupg \
   htop \
   jq \
   kubectl \
+  kustomize \
+  neofetch \
   node \
   postgres \
   ripgrep \
@@ -28,7 +38,9 @@ brew install azure-cli \
 
 # brew casks
 brew tap homebrew/cask-fonts
-brew cask install adobe-acrobat-reader \
+brew cask install \
+  adobe-acrobat-reader \
+  bitwarden \
   firefox \
   font-fira-code \
   google-chrome \
@@ -44,11 +56,9 @@ brew cask install adobe-acrobat-reader \
 #TODO: install istioctl
 
 # rust tooling
-if type "cargo" > /dev/null; then
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y;
-fi
+command -v "cargo" || \
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 # haskell tooling
-if type "stack" > /dev/null; then
-  curl -sSL https://get.haskellstack.org/ | sh;
-fi
+command -v "stack" || \
+  curl -sSL https://get.haskellstack.org/ | sh -s -- -y

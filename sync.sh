@@ -60,15 +60,14 @@ git config --global "includeif.gitdir:~/dev/.path" "$DOTFILES/git/dev.gitconfig"
 git config --global "includeif.gitdir:~/dev/fpcomplete/.path" "$DOTFILES/git/fpco.gitconfig"
 
 # completions
-echo "Install completions..."
+echo "Installing completions..."
 # docker
 curl -L https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker > $DOTFILES/zsh/completions/_docker
 # kubectl
 kubectl completion zsh > $DOTFILES/zsh/completions/_kubectl
 # istioctl
-if type "istioctl" > /dev/null; then
-  cp $(which istioctl)/../../tools/_istioctl $DOTFILES/zsh/completions/_istioctl;
-fi
+command -v "istioctl" && \
+  cp $(which istioctl)/../../tools/_istioctl $DOTFILES/zsh/completions/_istioctl
 
 # haskell tooling
 echo "Upgrading stack..."
