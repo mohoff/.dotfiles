@@ -6,8 +6,6 @@ export PATH=$HOME/.cargo/bin:$PATH # rust
 export PATH=$HOME/.local/bin:$PATH # haskell
 export PATH=$(brew --prefix git)/share/git-core/contrib/diff-highlight:$PATH
 
-export fpath=($DOTFILES/zsh/functions $DOTFILES/zsh/completions $fpath)
-
 export SHELL=$(which zsh)
 export EDITOR=vim
 export HOSTNAME=nomad

@@ -51,6 +51,8 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 source $ZSH/oh-my-zsh.sh
 
 source $DOTFILES/zsh/aliases.zsh
+
+export fpath=($DOTFILES/zsh/functions $DOTFILES/zsh/completions $fpath)
 source $DOTFILES/zsh/functions.zsh
 source $DOTFILES/zsh/config.zsh
 

@@ -52,3 +52,4 @@ The dotfiles are maintained as _my_ dotfiles. If you want to use them, update th
 - Make ssh+git config so that it shows gitlab/github handle instead of email
 - benchmark performance
 - different install (+sync?) script for mac and linux
+- introduce $TOOLS which resolves to user-owned dir where tools are installed.
