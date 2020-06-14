@@ -62,6 +62,12 @@ git config --global "includeif.gitdir:~/dev/fpcomplete/.path" "$DOTFILES/git/fpc
 echo "Symlinking istioctl..."
 ln -s $ISTIO_DIR/bin/istioctl /usr/local/bin/istioctl
 
+# z
+echo "Installing z..."
+mkdir -p $DOTFILES/zsh/z
+curl -L https://raw.githubusercontent.com/rupa/z/master/z.sh -o $DOTFILES/zsh/z/z.sh
+source $DOTFILES/zsh/z/z.sh
+
 # completions
 
 echo "Installing completions..."
@@ -74,6 +80,7 @@ cp $ISTIO_DIR/tools/_istioctl $DOTFILES/zsh/completions/_istioctl
 
 # haskell tooling
 echo "Upgrading stack..."
+# Fails in CI due to https://github.com/commercialhaskell/stack/issues/4979
 stack upgrade
 
 # source

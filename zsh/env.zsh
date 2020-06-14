@@ -35,3 +35,6 @@ export LS_COLORS="di=1;34:ln=36:so=1;31:pi=33:ex=1;32:bd=1;33:cd=1;33:su=1;32;43
 # istio
 export ISTIO_VERSION=1.6.2
 export ISTIO_DIR=$HOME/dev/istio-$ISTIO_VERSION
+
+# z
+export _Z_DATA=$DOTFILES/zsh/z/.z

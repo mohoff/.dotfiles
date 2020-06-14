@@ -47,7 +47,6 @@ The dotfiles are maintained as _my_ dotfiles. If you want to use them, update th
 ## TODO
 
 - add fuzzyfinder
-- gitattributes/git configs
 - improve git dirty color - signal that files can be staged
 - Switch to https://github.com/dandavison/delta when https://github.com/dandavison/delta/issues/177#issuecomment-635711834 is released
 - Make ssh+git config so that it shows gitlab/github handle instead of email
