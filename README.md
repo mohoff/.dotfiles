@@ -42,14 +42,13 @@ The dotfiles are maintained as _my_ dotfiles. If you want to use them, update th
 1. `git pull` in the repo directory `~/.dotfiles`.
 2. Run `sync.sh` to make sure that tools are up to date, symlinks exist, and all configs are in sync. If you don't use symlinks, you can diff the relevant files in your home directory (`.zshrc`, `.gitconfig`, and `.editorconfig`) and update them with the newly pulled files.
 
+## Use for Linux
 
+The scripts `install.sh` and `sync.sh` will install tools on Ubuntu. However, GUIs and fonts won't be installed. For details, please check both scripts and the CI job definition.
 
 ## TODO
 
-- add fuzzyfinder
-- improve git dirty color - signal that files can be staged
 - Switch to https://github.com/dandavison/delta when https://github.com/dandavison/delta/issues/177#issuecomment-635711834 is released
-- Make ssh+git config so that it shows gitlab/github handle instead of email
 - benchmark performance
-- different install (+sync?) script for mac and linux
-- introduce $TOOLS which resolves to user-owned dir where tools are installed.
+- Check Nix for install/sync script replacements
+- introduce $TOOLS which resolves to user-owned dir where tools are installed. Or just use `/usr/bin`?

@@ -1,4 +1,4 @@
-# Weather forecast on the terminal, e.g. `weather odessa`
+# first things first
 function weather {
   curl wttr.in/$1
 }

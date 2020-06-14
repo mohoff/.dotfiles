@@ -46,7 +46,7 @@ esac
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-DISABLE_UNTRACKED_FILES_DIRTY="true"
+#DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -67,3 +67,5 @@ source $DOTFILES/zsh/completions/alias-completions.zsh
 if [ -f $DOTFILES/zsh/nogit.zsh ]; then
   source $DOTFILES/zsh/nogit.zsh
 fi
+
+. $DOTFILES/zsh/z/z.sh

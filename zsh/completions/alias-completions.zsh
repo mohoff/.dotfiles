@@ -13,7 +13,7 @@ if type "kubectl" > /dev/null; then
   compdef kfp='k';
 fi
 
-# # istio
-# if type "istioctl" > /dev/null; then
-#   compdef i='istioctl';
-# fi
+# istio
+if type "istioctl" > /dev/null; then
+  compdef i='istioctl';
+fi

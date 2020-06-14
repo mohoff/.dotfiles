@@ -2,7 +2,7 @@
 
 # NOTE: After running this script, run /sync.sh
 
-set -euo pipefail
+set -euxo pipefail
 
 source zsh/env.zsh
 
@@ -10,7 +10,8 @@ source zsh/env.zsh
 command -v "istioctl" \
   || curl -L https://istio.io/downloadIstio | sh - \
   && mkdir -p $ISTIO_DIR \
-  && mv istio-$ISTIO_VERSION/* $ISTIO_DIR
+  && mv istio-$ISTIO_VERSION/* $ISTIO_DIR \
+  && sudo ln -s $ISTIO_DIR/bin/istioctl /usr/local/bin/istioctl
 
 # rust tooling
 command -v "cargo" \
@@ -75,7 +76,7 @@ case "$OSTYPE" in
       vlc
   ;;
   linux*)
-    # NOTE: Only non-GUI apps
+    # NOTE: No GUIs, no fonts
 
     echo "Installing Linux tools..."
     sudo apt update && sudo apt upgrade
@@ -99,12 +100,9 @@ case "$OSTYPE" in
     curl -sL "https://github.com/sharkdp/bat/releases/download/v0.15.4/bat-v0.15.4-x86_64-unknown-linux-musl.tar.gz" -o bat.tar.gz
     tar -xvf bat.tar.gz
     sudo mv bat-v0.15.4-x86_64-unknown-linux-musl/bat /usr/local/bin/
-    # bitwarden
-    curl -sL "https://vault.bitwarden.com/download/?app=cli&platform=linux" -o bitwarden
-    chmod +x bitwarden
-    sudo mv bitwarden /usr/local/bin/
     # diff-so-fancy
     git clone https://github.com/so-fancy/diff-so-fancy.git
+    sudo chmod +x diff-so-fancy/diff-so-fancy
     sudo ln -s diff-so-fancy/diff-so-fancy /usr/local/bin/diff-so-fancy
     # exa
     cargo install exa
@@ -126,13 +124,11 @@ case "$OSTYPE" in
     # kustomize
     curl -sL "https://raw.githubusercontent.com/\
 kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | bash
+    sudo mv kustomize /usr/local/bin/
     # prepare neofetch
     sudo add-apt-repository ppa:dawidd0811/neofetch
     # prepare nodejs
     curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-    # prepare postgres
-    sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
-    wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
     # ripgrep (via apt only with ubuntu 18.10 or newer)
     curl -sL "https://github.com/BurntSushi/ripgrep/releases/download/12.1.1/ripgrep-12.1.1-x86_64-unknown-linux-musl.tar.gz" -o ripgrep.tar.gz
     tar -xvf ripgrep.tar.gz
@@ -153,3 +149,24 @@ kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | bash
     echo "Unsupported \$OSTYPE $OSTYPE"
   ;;
 esac
+
+# verify installation
+istioctl version
+cargo --version
+stack --version
+az --version
+aws --version
+bat --version
+diff-so-fancy --version || true
+exa --version
+delta --version
+jq --version
+kubectl version --client=true
+kustomize version
+node --version
+psql --version
+rg --version
+terraform version
+yarn --version
+
+neofetch
