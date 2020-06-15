@@ -34,6 +34,7 @@ The dotfiles are maintained as _my_ dotfiles. If you want to use them, update th
    - Go to the _Colors_ tab and import the color preset `theming/snazzy_mod.itermcolors`.
    - Go to the _Keys_ tab and select _Natural Text Editing_ under the _Presets..._ dropdown. This improves `zsh-autosuggestions` a lot as you can navigate through the suggestions and segments by (`⌥` +) arrow keys.
    - Go to the _Text_ tab and select the _FiraCode_ font (installed with `install.sh`). Enable ligatures.
+   - Go to the _Terminal_ tab and enable _Unlimited scrollback_.
 1. _Optional_: Update `zsh/nogit.example.zsh` to your needs. Delete `/assets`.
 1. Source the zsh configuration by running `source ~/.zshrc`, or `reload` in case the aliases have been sourced already.
 
