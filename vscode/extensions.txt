@@ -1,10 +1,11 @@
 2gua.rainbow-brackets
+bbenoist.Nix
 bungcip.better-toml
 eamodio.gitlens
 eriklynd.json-tools
+hashicorp.terraform
 justusadam.language-haskell
 lunaryorn.hlint
-hashicorp.terraform
 monofon.hindent-format
 ms-azuretools.vscode-docker
 oderwat.indent-rainbow
