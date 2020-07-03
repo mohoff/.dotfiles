@@ -53,6 +53,7 @@ case "$OSTYPE" in
       ripgrep \
       rkhunter \
       terraform \
+      tokei \
       yarn \
       wget \
       zsh
@@ -137,6 +138,8 @@ kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | bash
     curl -sL "https://releases.hashicorp.com/terraform/0.12.26/terraform_0.12.26_linux_amd64.zip" -o terraform.zip
     unzip terraform.zip
     sudo mv terraform /usr/local/bin/
+    # tokei
+    cargo install tokei
     # yarn
     curl -o- -L https://yarnpkg.com/install.sh | bash
 
