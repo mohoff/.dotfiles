@@ -52,6 +52,7 @@ ln -s $DOTFILES/.editorconfig $HOME/.editorconfig
 echo "Symlinking .gitconfig..."
 ln -s $DOTFILES/.gitconfig $HOME/.gitconfig
 echo "Updating global git config..."
+# these insert tabs instead of spaces (https://stackoverflow.com/questions/32186600/how-to-make-git-config-to-use-spaces-instead-of-tabs)
 git config --global "core.editor" "$EDITOR"
 git config --global "core.excludesfile" "$DOTFILES/git/global.gitignore"
 git config --global "core.attributesfile" "$DOTFILES/git/global.gitattributes"
