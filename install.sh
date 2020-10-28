@@ -2,7 +2,7 @@
 
 # NOTE: After running this script, run /sync.sh
 
-set -euxo pipefail
+set -exo pipefail
 
 source zsh/env.zsh
 
@@ -19,7 +19,7 @@ command -v "cargo" \
 
 # haskell tooling
 command -v "stack" \
-  || curl -sSL https://get.haskellstack.org/ | sh -s -- -y
+  || curl -sSL https://get.haskellstack.org/ | sh -s
 
 case "$OSTYPE" in
   darwin*)
@@ -33,6 +33,8 @@ case "$OSTYPE" in
       /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
     # brew formulae
+    brew update || brew update
+    brew upgrade
     brew install \
       azure-cli \
       awscli \
@@ -52,6 +54,7 @@ case "$OSTYPE" in
       postgres \
       ripgrep \
       rkhunter \
+      shellcheck \
       terraform \
       tokei \
       yarn \

@@ -1,6 +1,6 @@
 [user]
   email = moritz@fpcomplete.com
-  signingKey = B35D45950E2E06EA
+  signingKey = 65DA74989944EFC1
 
 [commit]
   gpgsign = true
