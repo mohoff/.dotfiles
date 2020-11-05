@@ -1,6 +1,7 @@
 2gua.rainbow-brackets
 bbenoist.Nix
 bungcip.better-toml
+ChakrounAnas.turbo-console-log
 eamodio.gitlens
 eriklynd.json-tools
 hashicorp.terraform
