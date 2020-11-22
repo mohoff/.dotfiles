@@ -25,7 +25,7 @@ _Use at your own risk!_
 The dotfiles are maintained as _my_ dotfiles. If you want to use them, update the configs (e.g. git+ssh configs, VSCode extensions, etc.) to your needs. Please backup your existing configuration.
 
 *Step by step*:
-1. Clone this repo into your home directory so that there is `~/.dotfiles`.
+1. Clone this repo into your home directory so that there is `~/.dotfiles`, e.g. by using `git clone --recurse-submodules`.
 1. _Optional_: Revise and run `install.sh`. It takes care of installing tools.
 1. Revise and run `sync.sh` It will update
    - zsh and relevant plugins

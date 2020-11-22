@@ -11,7 +11,7 @@ export EDITOR=vim
 export HOSTNAME=nomad
 
 # oh-my-zsh
-export ZSH=$DOTFILES/zsh/oh-my-zsh
+export ZSH=$DOTFILES/zsh/ohmyzsh
 export ZSH_CUSTOM=$DOTFILES/theming
 
 # lang
@@ -35,4 +35,4 @@ export ISTIO_VERSION=1.6.2
 export ISTIO_DIR=$HOME/dev/istio-$ISTIO_VERSION
 
 # z
-export _Z_DATA=$DOTFILES/zsh/z/.z
+export _Z_DATA=$DOTFILES/.z

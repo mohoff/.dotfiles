@@ -23,6 +23,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
+        with:
+          submodules: recursive
       - name: Symlinking working dir into runner home dir
         run: ln -s $(pwd) ~/.dotfiles
       - name: Run install.sh

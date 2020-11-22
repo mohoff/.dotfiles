@@ -68,7 +68,7 @@ if [ -f $DOTFILES/zsh/nogit.zsh ]; then
   source $DOTFILES/zsh/nogit.zsh
 fi
 
-. $DOTFILES/zsh/z/z.sh
+. $DOTFILES/tools/z/z.sh
 
 # nix
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
