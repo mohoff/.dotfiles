@@ -58,6 +58,7 @@ case "$OSTYPE" in
       terraform \
       tokei \
       yarn \
+      webp \
       wget \
       zsh
 
