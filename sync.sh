@@ -35,6 +35,8 @@ echo "Installing vscode extensions..."
 cat vscode/extensions.txt | xargs -L 1 code --install-extension
 echo "Symlinking vscode settings.json..."
 ln -s $DOTFILES/vscode/settings.json $HOME/Library/"Application Support"/Code/User/settings.json
+echo "Symlinking vscode keybindings.json..."
+ln -s $DOTFILES/vscode/keybindings.json $HOME/Library/"Application Support"/Code/User/keybindings.json
 
 # ssh
 echo "Symlinking ssh config..."

@@ -13,11 +13,12 @@
   "editor.fontSize": 12,
   "editor.fontLigatures": true,
   "editor.fontFamily": "Fira Code",
+  "editor.formatOnSave": true, // trying this
+  "editor.formatOnType": true, // trying this
   "editor.minimap.renderCharacters": false,
   "editor.minimap.maxColumn": 100,
   "editor.emptySelectionClipboard": false,
   "explorer.openEditors.visible": 0,
-  "editor.suggestSelection": "first",
   "explorer.confirmDelete": false,
   "extensions.ignoreRecommendations": true,
   "files.autoSave": "afterDelay",
@@ -117,13 +118,18 @@
     "editor.insertSpaces": true,
     "editor.autoIndent": "full"
   },
-  "rust.clippy_preference": "on",
   "hindent-format.enable": true,
   "hindent-format.command": "/Users/mo/.local/bin/hindent",
   "[haskell]": {
     "editor.defaultFormatter": "monofon.hindent-format"
   },
-  "tabnine.experimentalAutoImports": true,
   "workbench.list.smoothScrolling": true,
   "editor.smoothScrolling": true,
+  "editor.smartSelect.selectLeadingAndTrailingWhitespace": false,
+  "editor.suggestSelection": "recentlyUsedByPrefix",
+  "rust-analyzer.hoverActions.enable": false,
+  "rust-analyzer.hoverActions.implementations": false,
+  "rust-analyzer.hoverActions.run": false,
+  "rust-analyzer.lens.run": false,
+  "rust-analyzer.lens.debug": false,
 }
