@@ -52,6 +52,8 @@ alias cc="cargo clippy"
 alias cr="cargo run"
 alias cb="cargo build"
 alias ct="cargo test"
+alias cw="cargo watch"
+alias cf="cargo fmt"
 
 # haskell
 alias s="stack"
