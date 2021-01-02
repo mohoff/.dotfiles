@@ -41,6 +41,7 @@ case "$OSTYPE" in
       bat \
       curl \
       exa \
+      exercism \
       git \
       git-delta \
       diff-so-fancy \
