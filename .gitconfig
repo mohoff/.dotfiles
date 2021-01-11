@@ -3,12 +3,12 @@
 # Some parts are overwritten by sync.sh because we want to use $DOTFILES instead of hard-coding paths. Git config does not support expansion
 
 [user]
-  name = Moritz Hoffmann
+	name = Moritz Hoffmann
 
 [core]
 	editor = vim
-	excludesfile = /Users/mo/.dotfiles/git/global.gitignore
-	attributesfile = /Users/mo/.dotfiles/git/global.gitattributes
+	excludesfile = /Users/moritz/.dotfiles/git/global.gitignore
+	attributesfile = /Users/moritz/.dotfiles/git/global.gitattributes
   pager = diff-so-fancy | less --tabs=4 -RFX
   #pager = delta --dark
 
@@ -31,6 +31,4 @@
 
 # Order matters using this approach - last matching directive is used
 [includeIf "gitdir:~/dev/"]
-	path = /Users/mo/.dotfiles/git/dev.gitconfig
-[includeIf "gitdir:~/dev/fpcomplete/"]
-	path = /Users/mo/.dotfiles/git/fpco.gitconfig
+	path = /Users/moritz/.dotfiles/git/work.gitconfig

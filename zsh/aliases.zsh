@@ -55,23 +55,6 @@ alias ct="cargo test"
 alias cw="cargo watch"
 alias cf="cargo fmt"
 
-# haskell
-alias s="stack"
-alias sb="s build --fast '--ghc-options=-freverse-errors -optP-Wno-nonportable-include-path'"
-alias sbp="sb --pedantic"
-alias si="sb --copy-bins"
-alias st="sb --test"
-alias sdev="si --file-watch"
-
-# kube
-alias k="kubectl"
-alias kt="kubetail"
-alias ks="kubespy"
-alias i="istioctl"
-
-# terraform
-alias tf="terraform"
-
 # docker
 alias d="docker"
 alias dka='d ps -q | xargs -n 1 d kill'
@@ -98,9 +81,6 @@ alias myip="curl http://ipinfo.io/ip"
 alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder;"
 alias brewclean="brew cleanup -s"
 alias firefox="open -a Firefox"
-alias vlc="open -a VLC"
-# command line pastebin
-alias ix="curl -F 'f:1=<-' ix.io"
 alias uuid="uuidgen | tr '[:upper:]' '[:lower:]'"
 alias https="http --default-scheme=https" # requires httpie
 # clear trash in all mounted volues, system and download logs

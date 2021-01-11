@@ -123,13 +123,8 @@
     "editor.insertSpaces": true,
     "editor.autoIndent": "full"
   },
-  "hindent-format.enable": true,
-  "hindent-format.command": "/Users/mo/.local/bin/hindent",
-  "[haskell]": {
-    "editor.defaultFormatter": "monofon.hindent-format"
-  },
   "workbench.list.smoothScrolling": true,
   "tabnine.experimentalAutoImports": true,
   "rust-analyzer.checkOnSave.allTargets": false,
-  "rust-analyzer.lens.methodReferences": true,
+  "rust-analyzer.lens.methodReferences": true
 }

@@ -4,3 +4,6 @@ zsh/nogit.zsh
 zsh/completions/_*
 
 .z
+
+git/*.gitconfig
+git/!example.gitconfig

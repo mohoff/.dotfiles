@@ -20,15 +20,15 @@ ln -s $DOTFILES/zsh/.zshrc $HOME/.zshrc
 echo "Updating and upgrading brew formulae..."
 brew update && brew upgrade
 echo "Upgrading outdated brew casks..."
-brew cask outdated | xargs brew cask upgrade
+brew outdated --cask | xargs brew cask upgrade
 
 # ohmyzsh and plugins
 echo "Pulling latest master: ohmyzsh..."
 git -C "$ZSH" pull
 echo "Pulling latest master: zsh-syntax-highlighting..."
-git -C "$ZSH/zsh-syntax-highlighting" pull
+git -C "$ZSH_SYNTAX_HIGHLIGHTING" pull
 echo "Pulling latest master: zsh-autosuggestions..."
-git -C "$ZSH/zsh-autosuggestions" pull
+git -C "$ZSH_AUTOSUGGESTIONS" pull
 
 # vscode
 echo "Installing vscode extensions..."
@@ -57,28 +57,14 @@ git config --global "core.attributesfile" "$DOTFILES/git/global.gitattributes"
 git config --global "includeif.gitdir:~/dev/.path" "$DOTFILES/git/dev.gitconfig"
 git config --global "includeif.gitdir:~/dev/fpcomplete/.path" "$DOTFILES/git/fpco.gitconfig"
 
-# istioctl
-echo "Symlinking istioctl..."
-ln -s $ISTIO_DIR/bin/istioctl /usr/local/bin/istioctl
-
 # z
 echo "Sourcing z..."
 source $DOTFILES/tools/z/z.sh
 
 # completions
-
 echo "Installing completions..."
 # docker
 curl -L https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker > $DOTFILES/zsh/completions/_docker
-# kubectl
-kubectl completion zsh > $DOTFILES/zsh/completions/_kubectl
-# istioctl
-cp $ISTIO_DIR/tools/_istioctl $DOTFILES/zsh/completions/_istioctl
-
-# haskell tooling
-echo "Upgrading stack..."
-# Fails in CI due to https://github.com/commercialhaskell/stack/issues/4979
-stack upgrade
 
 # source
 echo "Sourcing .zshrc..."

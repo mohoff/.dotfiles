@@ -1,0 +1,6 @@
+[user]
+  email = <email>
+  signingKey = <fingerprint>
+
+[commit]
+  gpgsign = true
