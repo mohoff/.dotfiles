@@ -108,16 +108,15 @@
   "rust-analyzer.lens.run": false,
   "rust-analyzer.lens.debug": false,
   "rust-analyzer.hoverActions.debug": false,
+  "rust-analyzer.checkOnSave.allTargets": false,
+  "rust-analyzer.lens.methodReferences": true,
   "tslint.configFile": "./tslint.json",
   "javascript.preferences.quoteStyle": "single",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "[javascript]": {
+    "editor.tabSize": 4,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2,
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true,
-    }
   },
   "yaml.completion": true,
   "yaml.format.singleQuote": true,
@@ -129,6 +128,10 @@
   },
   "workbench.list.smoothScrolling": true,
   "tabnine.experimentalAutoImports": true,
-  "rust-analyzer.checkOnSave.allTargets": false,
-  "rust-analyzer.lens.methodReferences": true
+  "prettier.printWidth": 100,
+  "prettier.singleQuote": true,
+  "prettier.tabWidth": 4,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
