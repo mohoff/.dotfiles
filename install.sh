@@ -9,6 +9,7 @@ source zsh/env.zsh
 # rust tooling
 command -v "cargo" \
   || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+cargo install cargo-watch
 
 case "$OSTYPE" in
   darwin*)

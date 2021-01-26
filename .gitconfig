@@ -28,6 +28,8 @@
   old = red bold
   new = green bold
   whitespace = red reverse
+[credential]
+	helper = osxkeychain
 
 # Order matters using this approach - last matching directive is used
 [includeIf "gitdir:~/dev/"]
