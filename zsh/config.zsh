@@ -27,8 +27,8 @@ setopt AUTO_CD
 setopt AUTO_REMOVE_SLASH
 # correct commands. Works with AUTO_CD
 setopt CORRECT
-# correct command arguments
-setopt CORRECT_ALL
+# don't correct command arguments
+unsetopt CORRECT_ALL
 # don't kill background processes when shell exits
 setopt NO_HUP
 # don't beep on ambiguous completions
@@ -85,6 +85,23 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 zstyle ':completion:*' insert-tab pending
 # color completions with LS_COLORS. Grays out already typed prefix
 zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==02=01}:${(s.:.)LS_COLORS}")'
+
+# Initialize the autocompletion
+autoload -Uz compinit && compinit -i
+
+# Improve SSH host autocompletions, also reads aliases from ~/.ssh/config.d/
+_ssh()
+{
+    local cur prev opts
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+    opts=$(grep '^Host' ~/.ssh/config ~/.ssh/config.d/* 2>/dev/null | grep -v '[?*]' | cut -d ' ' -f 2-)
+
+    COMPREPLY=( $(compgen -W "$opts" -- ${cur}) )
+    return 0
+}
+complete -F _ssh ssh
 
 
 # Search history with arrow keys (https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys)
