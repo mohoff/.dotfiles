@@ -10,7 +10,7 @@ export SHELL=$(which zsh)
 export EDITOR=vim
 export HOSTNAME=nomad
 
-# oh-my-zsh
+# zsh,oh-my-zsh
 export ZSH=$DOTFILES/zsh/ohmyzsh
 export ZSH_CUSTOM=$DOTFILES/theming
 

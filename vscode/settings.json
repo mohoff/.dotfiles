@@ -49,6 +49,8 @@
   "window.zoomLevel": -1,
   "workbench.editor.closeOnFileDelete": true,
   "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.editor.wrapTabs": true,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.settings.useSplitJSON": true,
   // Rainbow
