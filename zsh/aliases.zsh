@@ -55,6 +55,9 @@ alias ct="cargo test"
 alias cw="cargo watch"
 alias cf="cargo fmt"
 
+# kube
+alias k="kubectl"
+
 # docker
 alias d="docker"
 alias dka='d ps -q | xargs -n 1 d kill'

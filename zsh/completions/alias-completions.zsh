@@ -5,3 +5,8 @@
 if type "docker" > /dev/null; then
   compdef d='docker';
 fi
+
+# kubectl
+if type "kubectl" > /dev/null; then
+  compdef k='kubectl';
+fi
