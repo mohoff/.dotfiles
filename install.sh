@@ -27,6 +27,7 @@ case "$OSTYPE" in
     brew upgrade
     brew install \
       bat \
+      coreutils \
       curl \
       exa \
       git \
