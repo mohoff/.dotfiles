@@ -20,15 +20,15 @@ ln -s $DOTFILES/zsh/.zshrc $HOME/.zshrc
 echo "Updating and upgrading brew formulae..."
 brew update && brew upgrade
 echo "Upgrading outdated brew casks..."
-brew cask outdated | xargs brew cask upgrade
+brew outdated --cask | xargs brew cask upgrade
 
 # ohmyzsh and plugins
 echo "Pulling latest master: ohmyzsh..."
 git -C "$ZSH" pull
 echo "Pulling latest master: zsh-syntax-highlighting..."
-git -C "$ZSH/zsh-syntax-highlighting" pull
+git -C "$ZSH_SYNTAX_HIGHLIGHTING" pull
 echo "Pulling latest master: zsh-autosuggestions..."
-git -C "$ZSH/zsh-autosuggestions" pull
+git -C "$ZSH_AUTOSUGGESTIONS" pull
 
 # vscode
 echo "Installing vscode extensions..."

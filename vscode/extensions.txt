@@ -8,6 +8,7 @@ JuanBlanco.solidity
 justusadam.language-haskell
 lunaryorn.hlint
 matklad.rust-analyzer
+mikestead.dotenv
 monofon.hindent-format
 ms-azuretools.vscode-docker
 oderwat.indent-rainbow

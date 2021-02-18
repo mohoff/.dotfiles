@@ -12,6 +12,8 @@ export HOSTNAME=nomad
 
 # zsh,oh-my-zsh
 export ZSH=$DOTFILES/zsh/ohmyzsh
+export ZSH_AUTOSUGGESTIONS=$DOTFILES/zsh/zsh-autosuggestions
+export ZSH_SYNTAX_HIGHLIGHTING=$DOTFILES/zsh/zsh-syntax-highlighting
 export ZSH_CUSTOM=$DOTFILES/theming
 
 # lang

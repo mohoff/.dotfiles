@@ -16,6 +16,7 @@ command -v "istioctl" \
 # rust tooling
 command -v "cargo" \
   || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+cargo install cargo-watch
 
 # haskell tooling
 command -v "stack" \
@@ -65,7 +66,7 @@ case "$OSTYPE" in
 
     # brew casks
     brew tap homebrew/cask-fonts
-    brew cask install \
+    brew install --cask \
       adobe-acrobat-reader \
       bitwarden \
       firefox \
