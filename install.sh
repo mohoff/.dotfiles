@@ -40,6 +40,7 @@ case "$OSTYPE" in
       azure-cli \
       awscli \
       bat \
+      coreutils \
       curl \
       exa \
       exercism \
@@ -78,6 +79,7 @@ case "$OSTYPE" in
       microsoft-teams \
       notion \
       slack \
+      sublime-text \
       textmate \
       visual-studio-code \
       vlc

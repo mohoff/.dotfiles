@@ -3,7 +3,7 @@ alias ll="exa --all --long --header --git"
 alias l="ll"
 alias lls="ll --sort size --reverse --group-directories-first"
 alias tree="ll --tree"
-alias cat="bat --tabs 2"
+alias catt="bat --tabs 2"
 alias grep="grep --color=auto"
 
 # git
