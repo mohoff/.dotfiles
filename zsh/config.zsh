@@ -115,3 +115,5 @@ source $DOTFILES/zsh/key-bindings/fzf.zsh
 
 # Improves navigation in autosuggestions. WORDCHARS are added to set of alphanumeric chars
 export WORDCHARS='-.'
+
+export FZF_DEFAULT_COMMAND='fd --type f'
