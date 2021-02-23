@@ -63,3 +63,65 @@ function whois() {
 
   /usr/bin/whois -h whois.internic.net $domain | sed '/NOTICE:/q'
 }
+
+function f() {
+  case $1 in
+    ssh)
+      INPUT=$(rg --only-matching --no-line-number --no-heading --no-filename -e '^Host (.*)' ~/.ssh/** -r '$1' | sort -r)
+      ;;
+    gb)
+      INPUT=$(git branch -a --format='%(refname:short)')
+      ;;
+    de)
+      INPUT=$(docker ps --format '{{.Image}}')
+      ;;
+    k)
+      INOUT=$(kubectl get all --all-namespaces --no-headers --output custom-columns=":metadata.namespace,:metadata.name")
+      ;;
+    ke | kl)
+      INPUT=$(kubectl get pods --all-namespaces --no-headers --output custom-columns=":metadata.namespace,:metadata.name")
+      ;;
+    *)
+      echo "command not supported for fuzzy search"
+      ;;
+  esac
+
+  SELECTED=$(echo $INPUT | fzf)
+
+  case $1 in
+    ssh)
+      # is this needed?: fzf | xargs -o ssh
+      ssh $SELECTED
+      ;;
+    gb)
+      git checkout $SELECTED
+      ;;
+    de)
+      docker exec -it $SELECTED -- bash
+      ;;
+    k | ke | kl)
+      # TODO: test this
+      NAMESPACE=$(echo $SELECTED | tr -s ' ' | cut -f1 -d ' ')
+      NAME=$(echo $SELECTED | tr -s ' ' | cut -f2 -d ' ')
+
+      # https://stackoverflow.com/questions/47691479/listing-all-resources-in-a-namespace
+      case $1 in
+        k)
+          kubectl $2 $NAME -n $NAMESPACE
+          ;;
+        ke)
+          kubectl exec -it $NAME -n $NAMESPACE -- bash
+          ;;
+        kl)
+          kubectl logs $NAME -n $NAMESPACE --all-containers --follow
+          ;;
+        *)
+          echo "unknown kubectl fuzzy search"
+          ;;
+      esac
+      ;;
+    *)
+      echo "command not supported for fuzzy search"
+      ;;
+  esac
+}

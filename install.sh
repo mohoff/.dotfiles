@@ -30,6 +30,7 @@ case "$OSTYPE" in
       coreutils \
       curl \
       exa \
+      fzf \
       git \
       git-delta \
       diff-so-fancy \
