@@ -36,6 +36,7 @@ case "$OSTYPE" in
       gnupg \
       htop \
       jq \
+      kubectl \
       node \
       ripgrep \
       shellcheck \
@@ -53,6 +54,7 @@ case "$OSTYPE" in
       google-chrome \
       iterm2 \
       slack \
+      sublime-text \
       visual-studio-code
   ;;
   linux*)
@@ -90,6 +92,10 @@ case "$OSTYPE" in
     chmod +x jq
     sudo mv jq /usr/local/bin/
     ls -al /usr/local/bin
+    # kubectl
+    curl -sLO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+    chmod +x kubectl
+    sudo mv kubectl /usr/local/bin/
     # prepare nodejs
     curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
     # ripgrep (via apt only with ubuntu 18.10 or newer)
@@ -113,6 +119,7 @@ diff-so-fancy --version || true
 exa --version
 delta --version
 jq --version
+kubectl version --client=true
 node --version
 rg --version
 yarn --version

@@ -65,6 +65,8 @@ source $DOTFILES/tools/z/z.sh
 echo "Installing completions..."
 # docker
 curl -L https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker > $DOTFILES/zsh/completions/_docker
+# kubectl
+kubectl completion zsh > $DOTFILES/zsh/completions/_kubectl
 
 # source
 echo "Sourcing .zshrc..."
