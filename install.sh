@@ -40,6 +40,7 @@ case "$OSTYPE" in
       node \
       ripgrep \
       shellcheck \
+      tilt-dev/tap/tilt \
       yarn \
       webp \
       wget \
@@ -122,4 +123,5 @@ jq --version
 kubectl version --client=true
 node --version
 rg --version
+tilt version
 yarn --version
