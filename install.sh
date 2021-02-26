@@ -44,6 +44,7 @@ case "$OSTYPE" in
       curl \
       exa \
       exercism \
+      fd \
       fzf \
       git \
       git-delta \

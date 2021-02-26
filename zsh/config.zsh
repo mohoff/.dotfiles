@@ -84,7 +84,22 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 # pasting with tabs doesn't perform completion
 zstyle ':completion:*' insert-tab pending
 # color completions with LS_COLORS. Grays out already typed prefix
-zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==02=01}:${(s.:.)LS_COLORS}")'
+#zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==02=01}:${(s.:.)LS_COLORS}")'
+
+## From https://github.com/Aloxaf/fzf-tab#configure
+#
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# preview directory's content with exa when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+# switch group using `,` and `.`
+zstyle ':fzf-tab:*' switch-group ',' '.'
+## From https://github.com/Aloxaf/fzf-tab/wiki/Configuration#fzf-bindings
+zstyle ':fzf-tab:*' fzf-bindings 'ctrl-j:accept' 'ctrl-a:toggle-all'
 
 # Initialize the autocompletion
 autoload -Uz compinit && compinit -i
@@ -115,3 +130,11 @@ source $DOTFILES/zsh/key-bindings/fzf.zsh
 
 # Improves navigation in autosuggestions. WORDCHARS are added to set of alphanumeric chars
 export WORDCHARS='-.'
+
+# from https://github.com/junegunn/fzf#settings
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}

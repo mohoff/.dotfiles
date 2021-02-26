@@ -38,3 +38,7 @@ export ISTIO_DIR=$HOME/dev/istio-$ISTIO_VERSION
 
 # z
 export _Z_DATA=$DOTFILES/.z
+
+# fzf
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+# export FZF_COMPLETION_TRIGGER=',,'

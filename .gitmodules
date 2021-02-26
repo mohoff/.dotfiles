@@ -10,3 +10,6 @@
 [submodule "tools/z"]
 	path = tools/z
 	url = https://github.com/rupa/z.git
+[submodule "zsh/fzf-tab"]
+	path = zsh/fzf-tab
+	url = git@github.com:Aloxaf/fzf-tab.git

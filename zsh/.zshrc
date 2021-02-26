@@ -56,12 +56,12 @@ export fpath=($DOTFILES/zsh/functions $DOTFILES/zsh/completions $fpath)
 source $DOTFILES/zsh/functions.zsh
 source $DOTFILES/zsh/config.zsh
 
+autoload -U compinit && compinit
+
+source $DOTFILES/zsh/fzf-tab/fzf-tab.plugin.zsh
 # requires running /init.sh before
 source $DOTFILES/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $DOTFILES/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-autoload -U compinit && compinit
-
 source $DOTFILES/zsh/completions/alias-completions.zsh
 
 if [ -f $DOTFILES/zsh/nogit.zsh ]; then
