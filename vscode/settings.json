@@ -3,28 +3,30 @@
   "editor.autoIndent": "advanced",
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
+  "terminal.integrated.scrollback": 50000,
   "editor.renderWhitespace": "boundary",
   "editor.wordWrap": "on",
   "editor.wordWrapColumn": 100000,
-  "editor.tabSize": 2,
+  "editor.tabSize": 4,
   "editor.codeActionsOnSave": {
-    "source.fixAll.tslint": true
+    "source.fixAll": true,
+    "source.organizeImports": true,
+    "addMissingImports": true
   },
   "editor.fontSize": 12,
   "editor.fontLigatures": true,
   "editor.fontFamily": "Fira Code",
   "editor.formatOnSave": true,
-  "editor.formatOnType": false, // trying this
   "editor.minimap.renderCharacters": false,
   "editor.minimap.maxColumn": 100,
   "editor.emptySelectionClipboard": false,
   "editor.smoothScrolling": true,
   "editor.smartSelect.selectLeadingAndTrailingWhitespace": false,
-  "editor.suggestSelection": "recentlyUsedByPrefix",
+  "editor.suggestSelection": "recentlyUsed",
   "editor.suggest.showStatusBar": true,
   "editor.quickSuggestions": true,
-  "editor.snippetSuggestions": "none",
-  "editor.suggestOnTriggerCharacters": false,
+  "editor.snippetSuggestions": "inline",
+  "editor.suggestOnTriggerCharacters": true,
   "explorer.openEditors.visible": 0,
   "explorer.confirmDelete": false,
   "extensions.ignoreRecommendations": true,
@@ -46,7 +48,6 @@
     "**/.DS_Store": true
   },
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "window.zoomLevel": -1,
   "workbench.editor.closeOnFileDelete": true,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.tabSizing": "shrink",
@@ -54,10 +55,7 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.settings.useSplitJSON": true,
   // Rainbow
-  "indentRainbow.colors": [
-    "rgba(20,20,20,0.3)",
-    "rgba(50,50,50,0.3)"
-  ],
+  "indentRainbow.colors": ["rgba(20,20,20,0.3)", "rgba(50,50,50,0.3)"],
   "indentRainbow.errorColor": "rgba(128,32,32,0)",
   // Meterial Icon Theme
   "material-icon-theme.activeIconPack": "react",
@@ -108,17 +106,39 @@
   "rust-analyzer.lens.run": false,
   "rust-analyzer.lens.debug": false,
   "rust-analyzer.hoverActions.debug": false,
+  // resolves "unresolved macro" error
+  "rust-analyzer.procMacro.enable": true,
   "tslint.configFile": "./tslint.json",
   "javascript.preferences.quoteStyle": "single",
-  "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.inlayHints.parameterNames": "literals",
+  "javascript.inlayHints.variableTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
+  "typescript.suggest.autoImports": true, // default
+  "typescript.format.enable": false, // use prettier instead
+  "typescript.suggestionActions.enabled": true,
+  "typescript.inlayHints.parameterNames": "literals",
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "prettier.singleQuote": true,
+  "prettier.printWidth": 120,
+  "prettier.bracketSpacing": true,
+  "prettier.tabWidth": 4,
+  "prettier.trailingComma": "es5",
+  "prettier.useEditorConfig": true,
+  "prettier.useTabs": false,
+  "prettier.withNodeModules": false,
   "yaml.completion": true,
   "yaml.format.singleQuote": true,
   "yaml.format.bracketSpacing": true,
@@ -135,5 +155,12 @@
   "workbench.list.smoothScrolling": true,
   "tabnine.experimentalAutoImports": true,
   "rust-analyzer.checkOnSave.allTargets": false,
-  "rust-analyzer.lens.methodReferences": true,
+  "rust-analyzer.lens.methodReferences": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.showUnused": true // default
+  },
+  "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

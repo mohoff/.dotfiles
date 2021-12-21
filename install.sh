@@ -48,6 +48,7 @@ case "$OSTYPE" in
       fzf \
       git \
       git-delta \
+      gnu-sed \
       diff-so-fancy \
       gnupg \
       htop \
