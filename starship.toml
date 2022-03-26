@@ -1,20 +1,20 @@
 format = """
-[](bg:#9A348E fg:#9A348E)\
+[](#2b2d30)\
 $username\
 $hostname\
 $sudo\
-[](bg:#DA637D fg:#9A348E)\
+[](fg:#2b2d30 bg:#57c7fe)\
 $directory\
-[](fg:#DA627D bg:#86BBD8)\
+[](fg:#57c7fe bg:#00ffa5)\
 $nodejs\
 $rust\
-[](fg:#86BBD8 bg:#FCA17D)\
+[](fg:#00ffa5 bg:#f3f99c)\
 $git_branch\
 $git_status\
-[](fg:#FCA17D bg:#33658A)\
-$time\
-[ ](fg:#33658A)\
+[ ](fg:#f3f99c)\
 """
+
+# nice dark blug bg color: bg:#33658A
 
 # Disable the blank line at the start of the prompt
 add_newline = false
@@ -22,22 +22,22 @@ add_newline = false
 # You can also replace your username with a neat symbol like  to save some space
 [username]
 show_always = true
-style_user = "bg:#9A348E"
-style_root = "bg:#9A348E"
+style_user = "bg:#2b2d30"
+style_root = "fg:#ff5b56 bg:#2b2d30"
 format = '[$user ]($style)'
 
 [hostname]
 trim_at = ""
-style = "bg:#9A348E"
+style = "bg:#2b2d30"
 format = '[(@$hostname)]($style)'
 
 [sudo]
 disabled = false
-style = "bg:#9A348E"
+style = "bg:#2d2d30"
 format = '[$symbol]($style)'
 
 [directory]
-style = "bg:#DA627D"
+style = "fg:#2b2d30 bg:#57c7fe"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -49,21 +49,21 @@ truncation_symbol = "…/"
 [git_branch]
 symbol = ""
 truncation_length = 24
-style = "bg:#FCA17D"
-format = '[[ $symbol $branch ](bg:#FCA17D)]($style)'
+style = "fg:#2b2d30 bg:#f3f99c"
+format = '[ $symbol $branch ]($style)'
 
 [git_status]
-style = "bg:#FCA17D"
-format = '[[($all_status$ahead_behind )](bg:#FCA17D)]($style)'
+style = "fsg:#2b2d30 bg:#f3f99c"
+format = '[($all_status$ahead_behind )]($style)'
 
 [nodejs]
-symbol = "⬢"
-style = "bg:#86BBD8"
-format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+symbol = "⬡"
+style = "fg:#2b2d30 bg:#00ffa5"
+format = '[ $symbol ($version) ]($style)'
 
 [rust]
 symbol = "🦀"
-style = "bg:#86BBD8"
-format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+style = "fg:#2b2d30 bg:#00ffa5"
+format = '[ $symbol ($version) ]($style)'
 
-# TODO: nice bg dark blue: #33658A
+
