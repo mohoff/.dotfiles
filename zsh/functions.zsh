@@ -125,3 +125,8 @@ function f() {
       ;;
   esac
 }
+
+# attach to docker container with shell
+function attach() {
+    docker exec -it $@ /bin/sh
+}

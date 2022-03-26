@@ -18,9 +18,9 @@ ln -s $DOTFILES/zsh/.zshrc $HOME/.zshrc
 
 # upgrading brew formulae and casks
 echo "Updating and upgrading brew formulae..."
-brew update && brew upgrade
+#brew update && brew upgrade
 echo "Upgrading outdated brew casks..."
-brew outdated --cask | xargs brew cask upgrade
+#brew outdated --cask | xargs brew cask upgrade
 
 # ohmyzsh and plugins
 echo "Pulling latest master: ohmyzsh..."
